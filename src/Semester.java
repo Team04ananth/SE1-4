@@ -52,7 +52,7 @@ public class Semester {
 	 * @param startdate
 	 * @param enddate
 	 */
-	public void semester(string name, date startdate, sate enddate) {
+	public void semester(string name, date startdate, date enddate) {
 		// TODO - implement Semester.semester
 		throw new UnsupportedOperationException();
 	}

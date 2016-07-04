@@ -38,7 +38,7 @@ public class Schedule {
 	 * 
 	 * @param semester
 	 */
-	public Schedule(semester semester) {
+	public Schedule(Semester semester) {
 		// TODO - implement Schedule.Schedule
 		throw new UnsupportedOperationException();
 	}

@@ -25,7 +25,7 @@ public class StudentCourse {
 	 * 
 	 * @param student
 	 */
-	public StudentCourse(student student) {
+	public StudentCourse(Student student) {
 		// TODO - implement StudentCourse.StudentCourse
 		throw new UnsupportedOperationException();
 	}

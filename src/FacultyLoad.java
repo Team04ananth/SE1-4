@@ -4,7 +4,7 @@
 public class FacultyLoad {
 
 	/**
-	 * facult load hours
+	 * faculty load hours
 	 */
 	private int hours;
 
@@ -26,7 +26,7 @@ public class FacultyLoad {
 	 * @param faculty
 	 * @param semester
 	 */
-	public FacultyLoad(faculty faculty, string semester) {
+	public FacultyLoad(Faculty faculty, string semester) {
 		// TODO - implement FacultyLoad.FacultyLoad
 		throw new UnsupportedOperationException();
 	}

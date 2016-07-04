@@ -1,3 +1,5 @@
+import com.sun.corba.se.spi.orbutil.fsm.State;
+
 /**
  * A section is a class assigned for a lecture.
  */
@@ -8,7 +10,7 @@ public class Section {
 	 * section number
 	 */
 	private int number;
-// addu
+
 	public int getNumber() {
 		return this.number;
 	}
@@ -37,7 +39,7 @@ public class Section {
 	 * @param number
 	 * @param schedule
 	 */
-	public void section(int number, status schedule) {
+	public void section(int number, State schedule) {
 		// TODO - implement Section.section
 		throw new UnsupportedOperationException();
 	}
