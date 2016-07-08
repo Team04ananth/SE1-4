@@ -103,7 +103,19 @@ public class CourseAdd extends Frame{
 		txtCourseDes.setBounds(x/15+140, y/10+250, 3*x/4, 80);
 		
 		btnAddCourse.setBounds(x/2, y-200, 100, 25);
-		
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				CourseAdd.this.setVisible(false);
+				new CourseSelect();
+			}
+		});
+	 	
 		panel.add(lblDept);
 		panel.add(lblCourseNum);
 		panel.add(lblCourseName);

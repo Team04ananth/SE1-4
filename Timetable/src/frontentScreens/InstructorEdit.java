@@ -92,6 +92,18 @@ public class InstructorEdit extends Frame{
 		panel.add(lblMaxLoadSummer);
 		panel.add(txtMaxLoadSummer);
 		panel.add(btnSave);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InstructorEdit.this.setVisible(false);
+				new InstructorSelect();
+			}
+		});
 		add(panel);
 		txtFirstName.setText(faculty.getFirstName());
 		txtLastName.setText(faculty.getLastName());

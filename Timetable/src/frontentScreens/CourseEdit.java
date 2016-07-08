@@ -108,6 +108,18 @@ public class CourseEdit extends Frame {
 		panel.add(txtCourseDes);
 
 		panel.add(btnSave);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				CourseEdit.this.setVisible(false);
+				new CourseSelect();
+			}
+		});
 		btnSave.addActionListener(new ActionListener() {
 
 			@Override

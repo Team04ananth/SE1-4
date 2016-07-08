@@ -18,7 +18,7 @@ public class SemesterDM {
 		String endDate;
 		BufferedReader bufferedReader = null;
 		try {
-			FileReader fileReader = new FileReader("src/"+path);
+			FileReader fileReader = new FileReader("src/" + path);
 			bufferedReader = new BufferedReader(fileReader);
 			line = bufferedReader.readLine();
 			while ((line = bufferedReader.readLine()) != null) {
@@ -29,6 +29,7 @@ public class SemesterDM {
 					semName = token[0];
 					startDate = token[1];
 					endDate = token[2];
+					System.out.println(semName+" "+startDate+" "+endDate+" ");
 					Semesters sem = new Semesters();
 					sem.setSemesterName(semName);
 					sem.setStartDate(startDate);
@@ -46,6 +47,7 @@ public class SemesterDM {
 		} finally {
 			if (bufferedReader != null)
 				bufferedReader.close();
+
 		}
 
 	}

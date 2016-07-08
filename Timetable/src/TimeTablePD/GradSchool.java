@@ -47,5 +47,10 @@ public class GradSchool {
   {
 	  faculties.remove(f.getLastName());
   }
+  public void removeDegree(Degrees g)
+  {
+	  degrees.remove(g.getDegreeCode());
+  }
 
+  
 }

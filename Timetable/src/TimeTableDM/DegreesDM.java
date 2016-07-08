@@ -37,6 +37,7 @@ public class DegreesDM {
 					gradSchoolName=token[1];
 					degreeName = token[2];
 					forecast=Integer.parseInt(token[3]);
+					System.out.println(degreeCode+" "+gradSchoolName+" "+degreeName+" "+forecast+" ");
 					Degrees degree=new Degrees();
 					degree.setDegreeCode(degreeCode);
 					degree.setDegreeName(degreeName);

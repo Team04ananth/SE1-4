@@ -54,6 +54,18 @@ public class InstructorDelete extends Frame{
 		panel.add(instructorName);
 		panel.add(btnDelete);		
 		add(panel);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InstructorDelete.this.setVisible(false);
+				new InstructorSelect();
+			}
+		});
 		btnDelete.addActionListener(new ActionListener() {
 			
 			@Override

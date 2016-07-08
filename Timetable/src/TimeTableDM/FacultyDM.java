@@ -43,8 +43,8 @@ public class FacultyDM {
 					// LastName,FirstName,Grad
 					// School,Degree,Title,DaysToTeach,MaxLoadFall,MaxLoadSpring,MaxLoadSummer
 
-					firstName = token[0];
-					lastName = token[1];
+					firstName = token[1];
+					lastName = token[0];
 					gradSchool = token[2];
 					degree = token[3];
 					title = token[4];
@@ -52,6 +52,8 @@ public class FacultyDM {
 					loadFall = Integer.parseInt(token[6]);
 					loadSpring = Integer.parseInt(token[7]);
 					loadSummer = Integer.parseInt(token[8]);
+					System.out.println(firstName+" "+lastName+" "+gradSchool+" "+degree+" "+title+" "+daysToTeach+" "+loadFall+" "+loadSpring+" "+loadSummer+" ");
+
 					Faculty fac = new Faculty();
 					fac.setLastName(lastName);
 					fac.setFirstName(firstName);

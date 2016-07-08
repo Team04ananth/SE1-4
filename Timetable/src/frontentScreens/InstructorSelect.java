@@ -53,6 +53,18 @@ public class InstructorSelect extends Frame{
 		btnAdd.setBounds(x/4+80, y/5+100, 100, 25);
 		btnEdit.setBounds(x/4+200, y/5+100, 100, 25);
 		btnDelete.setBounds(x/4+320, y/5+100, 100, 25);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InstructorSelect.this.setVisible(false);
+				new Home();
+			}
+		});
 		
 		btnAdd.addActionListener(new ActionListener() {
 			

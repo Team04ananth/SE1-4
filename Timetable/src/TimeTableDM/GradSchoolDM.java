@@ -37,7 +37,7 @@ public class GradSchoolDM {
 				} else {
 					abbrev = token[0];
 					name = token[1];
-
+					System.out.println(abbrev+" "+name+" ");
 					GradSchool grad = new GradSchool();
 					grad.setGradSchoolAbbrev(abbrev);
 					grad.setGradSchoolName(name);

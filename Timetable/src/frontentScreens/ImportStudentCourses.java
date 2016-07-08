@@ -64,6 +64,18 @@ public class ImportStudentCourses extends Frame {
 		file.setBounds(x / 4 + 100, y / 5, 300, 25);
 		btnImport.setBounds(x / 4 + 80, y / 5 + 100, 100, 25);
 		btnSave.setBounds(x / 4 + 230, y / 5 + 100, 100, 25);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ImportStudentCourses.this.setVisible(false);
+				new Home();
+			}
+		});
 		btnImport.addActionListener(new ActionListener() {
 
 			@Override

@@ -60,6 +60,18 @@ public class CourseDelete extends Frame{
 		panel.add(lblCourseName);
 		panel.add(txtCourseName);
 		panel.add(btnDelete);
+		JButton back=new JButton("BACK");
+	 	back.setBounds(x-200,y-200,100,25);
+	 	panel.add(back);
+	 	back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				CourseDelete.this.setVisible(false);
+				new CourseSelect();
+			}
+		});
 		courseNumber.addActionListener(new ActionListener() {
 			
 			@Override

@@ -1,13 +1,23 @@
 package TimeTablePD;
+
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 public class Degrees {
 	private String DegreeCode;
 	private String GradSchool;
 	private String DegreeName;
 	private int Forecast;
+	public int count;
+	public ArrayList<DegreePlan> degreePlan;
     public Degrees()
-    {}
+    {
+    	count=1;
+    	degreePlan=new ArrayList<DegreePlan>();
+    }
 	public Degrees(String degreeCode, String gradSchool, String degreeName,
 			int forecast) {
+		count=1;
 		DegreeCode = degreeCode;
 		GradSchool = gradSchool;
 		DegreeName = degreeName;

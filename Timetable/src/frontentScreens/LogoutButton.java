@@ -20,6 +20,6 @@ public class LogoutButton {
 class LogoutAction implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
-		System.exit(0);
+		new MainScreen();
 	}
 }

@@ -77,18 +77,25 @@ public class CoursesDM {
 
 					c.setOfferedSummer(offerSummer);
 					String preq = token[8];
+	//				System.out.println("pres added ->"+preq);
+
 					if (!preq.equals("none")) {
+						
 						c.addCoursePrereqs(preq);
 					}
 					String fac=token[9];
 					c.addFaculty(fac);
 					University.addCourses(c);
 				} else {
+//					System.out.println("------------------------------------------------------------");
 					courseCode = line.substring(0, commaIndex);
+	//				System.out.print("Course code --"+courseCode+"---");
 					c.setCourseCode(courseCode);
 					int save = commaIndex;
 					commaIndex = line.indexOf(',', commaIndex + 1);
 					courseName = line.substring(save + 1, commaIndex);
+		//			System.out.print("Course name --"+courseName+"---");
+
 					c.setCourseName(courseName);
 					save = commaIndex;
 					commaIndex = line.indexOf(',', commaIndex + 1);
@@ -98,12 +105,16 @@ public class CoursesDM {
 						courseDesc = line.substring(quoteIndex + 1,
 								nextQuoteIndex);
 						c.setCourseDescription(courseDesc);
+		//				System.out.print("Course desc --"+courseDesc+"---");
+
 						save = line.indexOf(',', nextQuoteIndex);
 					} else {
 						save = commaIndex;
 						commaIndex = line.indexOf(',', commaIndex + 1);
 						courseDesc = line.substring(save + 1, commaIndex);
 						c.setCourseDescription(courseDesc);
+			//			System.out.print("Course desc --"+courseDesc+"---");
+
 						nextQuoteIndex = commaIndex;
 						save = nextQuoteIndex;
 					}
@@ -111,40 +122,55 @@ public class CoursesDM {
 					commaIndex = line.indexOf(',', save + 1);
 					courseHours = Integer.parseInt(line.substring(save + 1,
 							commaIndex));
+			//		System.out.print("Course hours --"+courseHours+"---");
+
 					c.setCourseHours(courseHours);
 					save = commaIndex;
 					commaIndex = line.indexOf(',', save + 1);
 					courseCap = Integer.parseInt(line.substring(save + 1,
 							commaIndex));
+		//			System.out.println("Course cap --"+courseCap+"---");
+
 					c.setCourseCap(courseCap);
 					save = commaIndex;
 					commaIndex = line.indexOf(',', save + 1);
 					offerFall = line.substring(save + 1, commaIndex).charAt(0);
+			//		System.out.println("offerfall --"+offerFall+"---");
+
 					c.setOfferedFall(offerFall);
 					save = commaIndex;
 					commaIndex = line.indexOf(',', save + 1);
 					offerSpring = line.substring(save + 1, commaIndex)
 							.charAt(0);
+				//	System.out.println("offerSpring --"+offerSpring+"---");
+
 					c.setOfferedSpring(offerSpring);
 					save = commaIndex;
 					commaIndex = line.indexOf(',', save + 1);
 					offerSummer = line.substring(save + 1, commaIndex)
 							.charAt(0);
+			//		System.out.println("offersummer --"+offerSummer+"---");
+
 					c.setOfferedSummer(offerSummer);
 					save = commaIndex;
 					nextQuoteIndex = line.indexOf('"', commaIndex + 1);
 					int nextComma = line.indexOf(',', commaIndex + 1);
-					if (nextQuoteIndex == -1 || nextQuoteIndex > nextComma) {
+					
+					if (nextQuoteIndex != -1 && nextQuoteIndex < nextComma) {
 						save = nextQuoteIndex;
 						nextQuoteIndex = line.indexOf('"', nextQuoteIndex + 1);
 						String pre = line.substring(save + 1, nextQuoteIndex);
 						String tokenPre[] = pre.split(",");
 						for (int k = 0; k < tokenPre.length; k++)
+							{//System.out.println("preq==="+tokenPre[k]+"===");
+							
 							c.addCoursePrereqs(tokenPre[k]);
-						save = nextComma;
+							}
+							save = nextComma;
 					} else {
 						String ss = line.substring(save + 1, nextComma);
 						if (!ss.equals("none")) {
+			//				System.out.println("preq==="+ss+"===");
 							c.addCoursePrereqs(ss);
 						}
 						save = nextComma;
@@ -157,14 +183,16 @@ public class CoursesDM {
 						String tokenfac[] = fac.split(",");
 						for (int k = 0; k < tokenfac.length; k++) { // coursePrereqs.add(tokenPre[k]);
 						//here i have got faculty names
+	//						System.out.println("token==="+tokenfac[k]+"===");
                             c.addFaculty(tokenfac[k]);                                       							
 						}
 					} else {
 
+		//				System.out.println("fac==="+line.substring(save + 1)+"===");
 						c.addFaculty(line.substring(save + 1));
 					}
 					University.addCourses(c);
-
+					System.out.println(courseCode+" "+courseName+" "+courseDesc+" "+courseHours+" "+courseCap+" "+offerFall+" "+offerSpring+" "+offerSummer);
 				}
 
 			}

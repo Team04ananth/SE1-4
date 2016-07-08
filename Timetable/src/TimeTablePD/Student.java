@@ -1,13 +1,15 @@
 package TimeTablePD;
 
+import java.util.ArrayList;
+
 public class Student {
 private String studentID;
 private String degreeCode;
-private String gradSchoolCode;
-
+private String semCode;
+public ArrayList<String> coursesLeft;
 public Student()
 {
-	
+	coursesLeft=new ArrayList<String>();
 }
 
 public String getStudentID() {
@@ -26,12 +28,12 @@ public void setDegreeCode(String degreeCode) {
 	this.degreeCode = degreeCode;
 }
 
-public String getGradSchoolCode() {
-	return gradSchoolCode;
+public String getSemCode() {
+	return semCode;
 }
 
-public void setGradSchoolCode(String gradSchoolCode) {
-	this.gradSchoolCode = gradSchoolCode;
+public void setSemCode(String semCode) {
+	this.semCode = semCode;
 }
 
 

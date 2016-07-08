@@ -11,8 +11,8 @@ public class Courses {
 	private char OfferedFall;
 	private char OfferedSpring;
 	private char OfferedSummer;
-	private ArrayList<String> CoursePrereqs;
-    private ArrayList<String> faculty;
+	public ArrayList<String> CoursePrereqs;
+    public ArrayList<String> faculty;
 	//CourseCode,Course Name,CourseDescription,CourseHours,CourseCap,OfferedFall?,OfferedSpring?,OfferedSummer?,CoursePrereqs (could be list),Teachers
 	public Courses() {
 		CoursePrereqs=new ArrayList<String>();
@@ -32,6 +32,14 @@ public class Courses {
 		OfferedSpring = offeredSpring;
 		OfferedSummer = offeredSummer;
 		CoursePrereqs = coursePrereqs;
+	}
+	
+	public boolean doesfacultyTeach(String lastName)
+	{
+		if(faculty.contains(lastName))
+			return true;
+		else
+			return false;
 	}
 
 	public String getCourseCode() {
@@ -116,5 +124,8 @@ public class Courses {
     {
     	this.faculty.add(faculty);   
     	}
+    
+    
+    
 
 }
